@@ -1,15 +1,74 @@
-# E-Commerce Transaction Data Quality & Pipeline Monitoring System
+# E-Commerce Data Quality & Pipeline Monitoring System
 
-## Project Overview
+## Overview
 
-This project builds a repeatable data pipeline for the Brazilian E-Commerce Public Dataset by Olist. The first phase loads raw CSV files, cleans core transaction tables, and writes the cleaned data into a SQLite database.
+This project builds a data quality monitoring and ETL pipeline for a multi-table e-commerce transaction system using the Brazilian E-Commerce Public Dataset by Olist.
 
-## Current Workflow
+The goal is to inspect, clean, validate, and monitor raw transactional data across orders, payments, products, customers, sellers, and reviews using Python, SQL, SQLite, and Power BI.
 
-1. Load raw Olist CSV files from `data/raw`
-2. Clean and standardize orders, payments, order items, customers, and products
-3. Save cleaned CSV files to `data/processed`
-4. Load cleaned files into `transaction_quality.db`
+---
+
+## Project Objectives
+
+- Build a repeatable ETL workflow for raw CSV datasets
+- Load structured e-commerce data into a SQL database
+- Perform data profiling and quality validation
+- Detect missing values, duplicate records, and relationship inconsistencies
+- Monitor transaction and payment integrity
+- Generate reporting outputs for operational monitoring dashboards
+
+---
+
+## Current Progress
+
+### Completed
+
+- Project structure setup
+- GitHub repository initialization
+- Raw CSV data inspection
+- Data profiling for 9 datasets
+- Missing value analysis
+- Duplicate row analysis
+- SQLite environment setup
+- Initial SQL connection testing
+
+### In Progress
+
+- CSV-to-database loading pipeline
+- SQL table creation
+- Data quality validation checks
+
+### Planned
+
+- Foreign key validation
+- Timestamp consistency checks
+- Payment reconciliation checks
+- Automated data quality reports
+- Power BI monitoring dashboard
+
+---
+
+## Dataset
+
+Dataset source:
+
+Brazilian E-Commerce Public Dataset by Olist (Kaggle)
+
+The dataset contains:
+
+- Orders
+- Order items
+- Payments
+- Customers
+- Products
+- Sellers
+- Reviews
+- Geolocation data
+- Product category translations
+
+Raw CSV files are excluded from this repository through `.gitignore`.
+
+---
 
 ## Tech Stack
 
@@ -17,46 +76,75 @@ This project builds a repeatable data pipeline for the Brazilian E-Commerce Publ
 - Pandas
 - SQLite
 - SQL
-- Power BI
+- VS Code
+- Git & GitHub
+- Power BI (planned)
 
-## How to Run
+---
 
-Install dependencies:
+## Project Structure
 
-```bash
-pip install -r requirements.txt
+```text
+ecommerce-data-quality-monitoring/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── database/
+│
+├── reports/
+│
+├── sql/
+│
+├── src/
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
 ```
 
-Preview raw data:
+---
 
-```bash
-python src/etl_load_raw.py
-```
+## Planned Data Quality Checks
 
-Clean raw data:
+### Key Integrity
 
-```bash
-python src/etl_clean_data.py
-```
+- Duplicate primary keys
+- Missing foreign key relationships
+- Orphan transaction records
 
-Load cleaned data into SQLite:
+### Completeness Checks
 
-```bash
-python src/load_to_database.py
-```
+- Missing customer information
+- Missing product metadata
+- Missing delivery timestamps
 
-## Current Outputs
+### Transaction Validation
 
-- `data/processed/orders_clean.csv`
-- `data/processed/payments_clean.csv`
-- `data/processed/order_items_clean.csv`
-- `data/processed/customers_clean.csv`
-- `data/processed/products_clean.csv`
-- `transaction_quality.db`
+- Invalid payment values
+- Payment/order reconciliation
+- Delivery status consistency
 
-## Next Steps
+### Operational Monitoring
 
-- Add SQL data quality checks
-- Generate automated validation reports
-- Add pipeline run logging
-- Build Power BI dashboard
+- Pipeline execution logs
+- Failed record reports
+- Validation summaries
+- Dashboard metrics
+
+---
+
+## Future Enhancements
+
+- PostgreSQL migration
+- Automated pipeline execution
+- Data quality scoring
+- Anomaly detection
+- Interactive Power BI dashboards
+
+---
+
+## Author
+
+Aiden
