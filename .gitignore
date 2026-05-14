@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Data files
+data/raw/
+data/processed/
+*.csv
+
+# Database
+database/
+*.db
+*.sqlite
+
+# Reports
+reports/
+*.log
+
+# VS Code
+.vscode/
