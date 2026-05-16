@@ -173,7 +173,7 @@ Current findings:
 Late delivery is treated as an operational KPI rather than a data error.
 
 ## Current Scripts
-
+```text
 src/
 ├── 01_inspect_raw_data.py
 ├── 02_profile_raw_data.py
@@ -188,6 +188,7 @@ src/
 ├── 11_run_missing_value_checks.py
 ├── 12_analyze_missing_approved_by_status.py
 └── 13_run_timestamp_logic_checks.py
+```
 
 Some scripts are currently used for learning and exploration. They may be refactored later into a smaller production-style pipeline.
 
