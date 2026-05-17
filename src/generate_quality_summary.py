@@ -2,12 +2,14 @@ import sqlite3
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-
-
-BASE_DIR = Path(__file__).resolve().parents[1]
-DB_PATH = BASE_DIR / "database" / "olist_quality.db"
-REPORTS_DIR = BASE_DIR / "reports"
-
+from config import (
+    RAW_DIR,
+    DATABASE_DIR,
+    REPORTS_DIR,
+    FAILED_RECORDS_DIR,
+    DB_PATH,
+    PIPELINE_LOG_PATH,
+)
 
 DATA_QUALITY_CHECKS = [
     # =========================
