@@ -1,13 +1,14 @@
 import sqlite3
 import pandas as pd
 from pathlib import Path
-
-
-BASE_DIR = Path(__file__).resolve().parents[1]
-
-RAW_DIR = BASE_DIR / "data" / "raw"
-DATABASE_DIR = BASE_DIR / "database"
-DB_PATH = DATABASE_DIR / "olist_quality.db"
+from config import (
+    RAW_DIR,
+    DATABASE_DIR,
+    REPORTS_DIR,
+    FAILED_RECORDS_DIR,
+    DB_PATH,
+    PIPELINE_LOG_PATH,
+)
 
 
 TABLES = {

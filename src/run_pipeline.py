@@ -12,16 +12,16 @@ PIPELINE_LOG_PATH = REPORTS_DIR / "pipeline_log.csv"
 
 PIPELINE_STEPS = [
     {
-        "step_name": "load_raw_to_sqlite",
-        "script_path": BASE_DIR / "src" / "04_load_raw_to_sqlite.py"
+        "step_name": "load_data",
+        "script_path": BASE_DIR / "src" / "load_data.py"
     },
     {
-        "step_name": "generate_data_quality_summary",
-        "script_path": BASE_DIR / "src" / "17_generate_data_quality_summary.py"
+        "step_name": "generate_quality_summary",
+        "script_path": BASE_DIR / "src" / "generate_quality_summary.py"
     },
     {
         "step_name": "export_failed_records",
-        "script_path": BASE_DIR / "src" / "18_export_failed_records.py"
+        "script_path": BASE_DIR / "src" / "export_failed_records.py"
     }
 ]
 
