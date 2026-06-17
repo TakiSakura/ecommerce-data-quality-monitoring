@@ -3,14 +3,12 @@ import sys
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-from config import (
-    RAW_DIR,
-    DATABASE_DIR,
-    REPORTS_DIR,
-    FAILED_RECORDS_DIR,
-    DB_PATH,
-    PIPELINE_LOG_PATH,
-)
+
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+REPORTS_DIR = BASE_DIR / "reports"
+PIPELINE_LOG_PATH = REPORTS_DIR / "pipeline_log.csv"
+
 
 PIPELINE_STEPS = [
     {
